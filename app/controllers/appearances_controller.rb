@@ -9,7 +9,7 @@ class AppearancesController < ApplicationController
     @appearance = Appearance.new(appearance_params)
     @appearance.user_id = session[:user_id]
     if @appearance.save
-      redirect_to @appearance.episode
+      redirect_to appearance_path(@appearance)
     else
       redirect_to new_appearance_path
     end
